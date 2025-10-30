@@ -41,6 +41,45 @@ printf("Esquerda\n");
 k++;
 } while (k < casas_rainha);
 
+// Nível Aventureiro - Movimentação do CAVALO em L usando loops aninhados
+// --------------------------
+printf("\nMovimentacao do Cavalo:\n");
+int movimentos = 0;
+for (int dx = -2; dx <= 2; dx++) {
+for (int dy = -2; dy <= 2; dy++) {
+// Ignora movimentos que não formam L
+if (abs(dx) + abs(dy) != 3 || dx == 0 || dy == 0) {
+continue;
+}
+
+
+// Mostra direção aproximada com base em dx e dy
+if (dx == -2) printf("Cavalo: 2 Esquerda, ");
+if (dx == 2) printf("Cavalo: 2 Direita, ");
+if (dx == -1) printf("Cavalo: 1 Esquerda, ");
+if (dx == 1) printf("Cavalo: 1 Direita, ");
+
+
+if (dy == -2) printf("2 Baixo\n");
+if (dy == 2) printf("2 Cima\n");
+if (dy == -1) printf("1 Baixo\n");
+if (dy == 1) printf("1 Cima\n");
+
+
+movimentos++;
+
+
+// Exemplo de uso do break: para depois de encontrar 8 movimentos
+if (movimentos == 8) {
+break;
+}
+}
+if (movimentos == 8) {
+break;
+}
+}
+
 
 return 0;
 }
+
